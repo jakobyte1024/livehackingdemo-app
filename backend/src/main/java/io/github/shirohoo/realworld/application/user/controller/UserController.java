@@ -11,7 +11,6 @@ import io.github.shirohoo.realworld.domain.user.User;
 import io.github.shirohoo.realworld.domain.user.UserVO;
 
 import java.util.Map;
-import java.util.UUID;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -56,8 +55,8 @@ public class UserController {
     }
 
     @GetMapping("/api/user/{userId}")
-    public UserResponse getUser(@PathVariable String userId) {
-        UserVO userVO = userService.findUser(UUID.fromString(userId));
+    public UserResponse getUser(@PathVariable Integer userId) {
+        UserVO userVO = userService.findUser(userId);
         return new UserResponse(userVO);
     }
 

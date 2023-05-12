@@ -7,8 +7,6 @@ import io.github.shirohoo.realworld.domain.user.User;
 import io.github.shirohoo.realworld.domain.user.UserRepository;
 import io.github.shirohoo.realworld.domain.user.UserVO;
 
-import java.util.UUID;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -54,11 +52,10 @@ public class UserService {
     }
 
     @Transactional(readOnly = true)
-    public UserVO findUser(UUID userId) {
+    public UserVO findUser(Integer userIdToRequest) {
 
         return userRepository
-                .findById(userId)
-                .filter(user -> userId.equals(userId))
+                .findById(userIdToRequest)
                 .map(user -> {
                     return new UserVO(user);
                 })
