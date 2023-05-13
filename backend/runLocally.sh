@@ -1,0 +1,7 @@
+export DATABASE_USER=app
+export DATABASE_PASSWORD=condui7Da7abas3Pr0dUS3rPaSSw0rd
+export DATABASE_HOSTNAME=34.89.181.119
+export DATABASE_PORT=5432
+export DATABASE_NAME=app
+export SPRING_PROFILES_ACTIVE=dev
+./gradlew bootRun
